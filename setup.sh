@@ -227,6 +227,14 @@ cp $HOME/fabio-configs/.zshrc $HOME/.zshrc
 
 echo "\n"
 echo "################################################################"
+echo "Install PowerLevel 10k"
+echo "################################################################"
+echo "\n"
+
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+
+echo "\n"
+echo "################################################################"
 echo "FINISH"
 echo "################################################################"
 echo "\n"
