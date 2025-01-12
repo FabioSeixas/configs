@@ -199,8 +199,6 @@ echo "\n"
 
 sudo apt install tmux -y
 
-tmux -v
-
 echo "\n"
 echo "################################################################"
 echo "Install tmux plugin manager"
