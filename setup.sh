@@ -199,6 +199,20 @@ echo "\n"
 
 sudo apt install tmux -y
 
+tmux -v
+
+echo "\n"
+echo "################################################################"
+echo "Install tmux plugin manager"
+echo "################################################################"
+echo "\n"
+
+cd $HOME
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+cd $HOME/fabio-configs/.tmux.conf $HOME/.tmux.conf
+
+tmux source ~/.tmux.conf
+
 echo "\n"
 echo "################################################################"
 echo "FINISH"
