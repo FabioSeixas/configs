@@ -1,0 +1,9 @@
+[legacy/keybindings]
+copy='<Primary>c'
+paste='<Primary>v'
+
+[legacy/profiles:/:e8356823-cb11-408f-a7f4-9b34f4228b82]
+default-size-columns=200
+default-size-rows=200
+font='FiraCode Nerd Font 12'
+use-system-font=false
