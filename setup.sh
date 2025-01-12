@@ -27,7 +27,7 @@ echo "Install Git from apt"
 echo "################################################################"
 echo "\n"
 
-sudo apt install git-all
+sudo apt install git
 
 echo "\n"
 echo "################################################################"
