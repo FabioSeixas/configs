@@ -205,8 +205,12 @@ echo "################################################################"
 echo "\n"
 
 cd $HOME
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-cp $HOME/fabio-configs/.tmux.conf $HOME/.tmux.conf
+if [ "$(ls -A .tmux/plugins/tpm)" ]; then
+    echo "Tmux plugin manager is already installed"
+else
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+    cp $HOME/fabio-configs/.tmux.conf $HOME/.tmux.conf
+fi
 
 tmux source ~/.tmux.conf
 ./tmux/plugins/tpm/bin/install_plugins
