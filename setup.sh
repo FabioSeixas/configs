@@ -198,6 +198,8 @@ echo "\n"
 
 sudo apt install tmux -y
 
+cp $HOME/fabio-configs/.tmux.conf $HOME/.tmux.conf
+
 echo "\n"
 echo "################################################################"
 echo "Install tmux plugin manager"
@@ -208,15 +210,9 @@ cd $HOME
 if [ "$(ls -A .tmux/plugins/tpm)" ]; then
     echo "Tmux plugin manager is already installed"
 else
-    setenv -g TMUX_PLUGIN_MANAGER_PATH "$HOME/.tmux/plugins/"
-
     git clone https://github.com/tmux-plugins/tpm .tmux/plugins/tpm
-    cp $HOME/fabio-configs/.tmux.conf $HOME/.tmux.conf
 
     ~/.tmux/plugins/tpm/bin/install_plugins
-
-    run -b '~/.tmux/plugins/tpm/tpm'
-    
 fi
 
 tmux source ~/.tmux.conf
