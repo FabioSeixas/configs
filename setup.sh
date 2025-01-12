@@ -1,15 +1,11 @@
+#!bin/bash
+
 echo "\n"
 echo "################################################################"
 echo "Beginning setup Fabio's development enviroment on Ubuntu 24.04.1"
 echo "################################################################"
 
-echo "\n"
-echo "################################################################"
-echo "!! It's expected that the .ssh dir is filled with your keys !!"
-echo "################################################################"
-echo "\n"
-
-cd ~/
+cd $HOME
 
 sudo apt update
 
@@ -43,9 +39,10 @@ echo "Clone config files repository"
 echo "################################################################"
 echo "\n"
 
-if [ "$(ls -A ~/fabio-configs)" ]; then
+if [ "$(ls -A $HOME/fabio-configs)" ]; then
   echo "Config files already exist"
 else
+  cd $HOME
   git clone https://github.com/fabioseixas/configs.git fabio-configs
 fi
 
@@ -56,8 +53,9 @@ echo "################################################################"
 echo "\n"
 
 sudo apt install zsh -y
-touch .zshrc
-echo "\nzsh" >> .bashrc
+touch $HOME/.zshrc
+echo "\n" >> $HOME/.bashrc
+echo "zsh" >> $HOME/.bashrc
 
 echo "\n"
 echo "################################################################"
@@ -65,7 +63,7 @@ echo "Install nvm 0.40.1"
 echo "################################################################"
 echo "\n"
 
-if ! which nvm > /dev/null; then
+if [ "$(ls -A $HOME/.nvm)" ]; then
   echo "NVM is already installed"
 else 
   PROFILE=/dev/null bash -c 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash'
@@ -90,17 +88,17 @@ echo "Install NeoVim 0.10.3"
 echo "################################################################"
 echo "\n"
 
-if [ "$(ls -A  /home/$(whoami)/nvim/bin)" ]; then
+if [ "$(ls -A $HOME/nvim)" ]; then
   echo "NeoVim is already installed"
 else 
+  cd $HOME
   curl -LO https://github.com/neovim/neovim/releases/download/v0.10.3/nvim-linux64.tar.gz
-  sudo rm -rf ./nvim
   sudo tar -xzf nvim-linux64.tar.gz
   mv nvim-linux64 nvim
   sudo rm -rf nvim-linux64.tar.gz
-
-  echo "export PATH=$PATH:/home/$(whoami)/nvim/bin" >> .zshrc
 fi
+
+export PATH=$PATH:$HOME/nvim/bin
 
 echo "\n"
 echo "################################################################"
@@ -108,15 +106,16 @@ echo "Install golang 1.24.4"
 echo "################################################################"
 echo "\n"
 
-if ! which go > /dev/null; then
+if [ "$(ls -A /usr/local/go)" ]; then
   echo "Golang is already installed"
 else 
   curl https://dl.google.com/go/go1.23.4.linux-amd64.tar.gz --output go1.23.4.linux-amd64.tar.gz
   sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.23.4.linux-amd64.tar.gz
-  export PATH=$PATH:/usr/local/go/bin
   go version
   sudo rm go1.23.4.linux-amd64.tar.gz 
 fi
+
+export PATH=$PATH:/usr/local/go/bin
 
 echo "\n"
 echo "################################################################"
@@ -124,9 +123,10 @@ echo "Fetch NeoVim config files"
 echo "################################################################"
 echo "\n"
 
-if [ "$(ls -A .config/nvim)" ]; then
+if [ "$(ls -A $HOME/.config/nvim)" ]; then
   echo "NeoVim config files already exist"
 else
+  cd $HOME
   git clone https://github.com/fabioseixas/nvim-config.git .config/nvim
 fi
 
@@ -137,6 +137,14 @@ echo "################################################################"
 echo "\n"
 
 nvim --headless "+Lazy! install" +qa
+
+echo "\n"
+echo "################################################################"
+echo "Install nvim treesitter stuff"
+echo "################################################################"
+echo "\n"
+
+nvim --headless "+TSUpdateSync" +qa
 
 echo "\n"
 echo "################################################################"
