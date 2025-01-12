@@ -1,0 +1,8 @@
+[user]
+	email = dev.fabioseixas@gmail.com
+	name = fabioseixas
+
+[alias]
+        wkls = worktree list
+        wkadd = worktree add
+        wkrm = worktree remove
