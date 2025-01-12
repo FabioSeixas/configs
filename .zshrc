@@ -6,13 +6,13 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # update PATH
-alias android-studio="~/android-studio/bin/studio.sh"
-export PATH=/home/fabio/android-studio/bin:$PATH
+# alias android-studio="~/android-studio/bin/studio.sh"
+# export PATH=$HOME/android-studio/bin:$PATH
 export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
-export PATH=$PATH:$HOME/.sonar-scanner/bin
-export PATH=$PATH:/opt/nvim-linux64/bin
+# export PATH=$PATH:$HOME/.sonar-scanner/bin
+export PATH=$PATH:$HOME/nvim/bin
 export PATH=$PATH:/opt/gcc-arm/bin
-export PATH=$PATH:$HOME/.cargo/bin
+# export PATH=$PATH:$HOME/.cargo/bin
 
 # nvim as default editor
 alias vim="nvim"
@@ -21,9 +21,6 @@ export EDITOR="nvim"
 
 # zsh
 alias zshc="vim ~/.zshrc"
-
-# atac
-alias atac="ATAC_KEY_BINDINGS=~/atac/bindings.toml ~/atac/atac -d ~/atac"
 
 # tmux
 alias tmx="tmux"
@@ -38,7 +35,6 @@ alias rust="cd ~/projects/learn/rust" # go to rust folder
 alias golang="cd ~/projects/learn/golang/" # go to golang folder
 alias zig="cd ~/projects/zig" # go to zig folder
 alias notion="cd ~/Desktop/notion" # go to notion folder
-alias badico="cd ~/projects/badico" # go to badico folder
 
 # docker
 alias dc="docker compose"
@@ -215,7 +211,7 @@ export NODE_OPTIONS=--max-old-space-size=8192
 . "$HOME/.cargo/env"
 
 # pnpm
-export PNPM_HOME="/home/fabioseixas/.local/share/pnpm"
+export PNPM_HOME="$HOME/.local/share/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
