@@ -144,7 +144,7 @@ echo "Install nvim treesitter stuff"
 echo "################################################################"
 echo "\n"
 
-nvim --headless -c "TSInstallSync maintained" -c q
+nvim --headless -c "TSInstallSync" -c q
 
 echo "\n"
 echo "################################################################"
