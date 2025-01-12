@@ -140,14 +140,6 @@ nvim --headless "+Lazy! install" +qa
 
 echo "\n"
 echo "################################################################"
-echo "Install nvim treesitter stuff"
-echo "################################################################"
-echo "\n"
-
-nvim --headless -c "TSInstallSync" -c q
-
-echo "\n"
-echo "################################################################"
 echo "Install FiraCode"
 echo "################################################################"
 echo "\n"
