@@ -90,7 +90,7 @@ echo "Install NeoVim 0.10.3"
 echo "################################################################"
 echo "\n"
 
-if [ "$(ls -A  /home/fabioseixas/nvim/bin)" ]; then
+if [ "$(ls -A  /home/$(whoiam)/nvim/bin)" ]; then
   echo "NeoVim is already installed"
 else 
   curl -LO https://github.com/neovim/neovim/releases/download/v0.10.3/nvim-linux64.tar.gz
@@ -99,7 +99,7 @@ else
   mv nvim-linux64 nvim
   sudo rm -rf nvim-linux64.tar.gz
 
-  echo "export PATH=$PATH:/home/fabioseixas/nvim/bin" >> .zshrc
+  echo "export PATH=$PATH:/home/$(whoiam)/nvim/bin" >> .zshrc
 fi
 
 echo "\n"
