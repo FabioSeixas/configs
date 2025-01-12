@@ -207,7 +207,7 @@ echo "\n"
 
 cd $HOME
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-cd $HOME/fabio-configs/.tmux.conf $HOME/.tmux.conf
+cp $HOME/fabio-configs/.tmux.conf $HOME/.tmux.conf
 
 tmux source ~/.tmux.conf
 
