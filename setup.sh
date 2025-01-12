@@ -19,7 +19,7 @@ echo "Install cURL from apt"
 echo "################################################################"
 echo "\n"
 
-sudo apt install curl
+sudo apt install curl -y
 
 echo "\n"
 echo "################################################################"
@@ -27,7 +27,7 @@ echo "Install Git from apt"
 echo "################################################################"
 echo "\n"
 
-sudo apt install git
+sudo apt install git -y
 
 echo "\n"
 echo "################################################################"
@@ -35,7 +35,7 @@ echo "Install build-essential from apt"
 echo "################################################################"
 echo "\n"
 
-sudo apt install build-essential
+sudo apt install build-essential -y
 
 echo "\n"
 echo "################################################################"
@@ -55,7 +55,7 @@ echo "Install Zsh from apt"
 echo "################################################################"
 echo "\n"
 
-sudo apt install zsh
+sudo apt install zsh -y
 touch .zshrc
 echo "\nzsh" >> .bashrc
 
@@ -90,7 +90,7 @@ echo "Install NeoVim 0.10.3"
 echo "################################################################"
 echo "\n"
 
-if [ "$(ls -A  /home/$(whoiam)/nvim/bin)" ]; then
+if [ "$(ls -A  /home/$(whoami)/nvim/bin)" ]; then
   echo "NeoVim is already installed"
 else 
   curl -LO https://github.com/neovim/neovim/releases/download/v0.10.3/nvim-linux64.tar.gz
@@ -99,7 +99,7 @@ else
   mv nvim-linux64 nvim
   sudo rm -rf nvim-linux64.tar.gz
 
-  echo "export PATH=$PATH:/home/$(whoiam)/nvim/bin" >> .zshrc
+  echo "export PATH=$PATH:/home/$(whoami)/nvim/bin" >> .zshrc
 fi
 
 echo "\n"
