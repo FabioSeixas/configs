@@ -169,6 +169,8 @@ else
     curl -fLO https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/FiraCode/SemiBold/FiraCodeNerdFontPropo-SemiBold.ttf
 fi
 
+
+
 echo "\n"
 echo "################################################################"
 echo "Gnome default terminal settings"
@@ -188,6 +190,14 @@ echo "Updated gettings terminal profiles:"
 echo "\n"
 gsettings get org.gnome.Terminal.ProfilesList default 
 gsettings get org.gnome.Terminal.ProfilesList list 
+
+echo "\n"
+echo "################################################################"
+echo "Install tmux from apt"
+echo "################################################################"
+echo "\n"
+
+sudo apt install tmux -y
 
 echo "\n"
 echo "################################################################"
