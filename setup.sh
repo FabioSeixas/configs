@@ -235,6 +235,14 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 
 echo "\n"
 echo "################################################################"
+echo "Install Input Remapper"
+echo "################################################################"
+echo "\n"
+
+sudo apt install input-remapper -y
+
+echo "\n"
+echo "################################################################"
 echo "FINISH"
 echo "################################################################"
 echo "\n"
