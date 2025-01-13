@@ -22,6 +22,9 @@ export EDITOR="nvim"
 # zsh
 alias zshc="vim ~/.zshrc"
 
+# copy
+alias copy='xclip -sel clip'
+
 # tmux
 alias tmx="tmux"
 alias tmxc="nvim ~/.tmux.conf"
