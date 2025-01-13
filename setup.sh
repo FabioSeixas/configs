@@ -273,6 +273,12 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 
 docker -v
 
+sudo groupadd docker
+
+sudo usermod -aG docker $USER
+
+newgrp docker
+
 echo "\n"
 echo "################################################################"
 echo "FINISH"
