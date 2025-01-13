@@ -192,6 +192,14 @@ gsettings get org.gnome.Terminal.ProfilesList list
 
 echo "\n"
 echo "################################################################"
+echo "Install xclip"
+echo "################################################################"
+echo "\n"
+
+sudo apt install xclip -y
+
+echo "\n"
+echo "################################################################"
 echo "Install tmux from apt"
 echo "################################################################"
 echo "\n"
