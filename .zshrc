@@ -221,6 +221,9 @@ case ":$PATH:" in
 esac
 # pnpm end
 
+# Fix terminal bind Ctrl+A+L
 # Remove terminal shortcut Ctrl+L (clear-screen)
 # https://unix.stackexchange.com/questions/717315/disable-shortcut-ctrll-which-clears-the-terminal
 bindkey -r "^L"
+# Bind again for TMUX
+tmux bind C-l split-window -h
