@@ -220,3 +220,7 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# Remove terminal shortcut Ctrl+L (clear-screen)
+# https://unix.stackexchange.com/questions/717315/disable-shortcut-ctrll-which-clears-the-terminal
+bindkey -r "^L"
