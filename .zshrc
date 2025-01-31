@@ -226,4 +226,4 @@ esac
 # https://unix.stackexchange.com/questions/717315/disable-shortcut-ctrll-which-clears-the-terminal
 bindkey -r "^L"
 # Bind again for TMUX
-tmux bind C-l split-window -h
+tmux bind C-l split-window -h -c "#{pane_current_path}"
