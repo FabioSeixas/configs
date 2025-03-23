@@ -289,6 +289,21 @@ newgrp docker
 
 echo "\n"
 echo "################################################################"
+echo "Change docker data directory"
+echo "################################################################"
+echo "\n"
+
+# https://mehamasum.github.io/blog/2021/7/how-to-change-docker-data-directory-in-ubuntu/
+
+sudo service docker stop
+
+cd /etc/lib/docker
+echo '{\n  "data-root": "/home/fabioseixas/docker"\n}' > daemon.json
+
+sudo service docker start
+
+echo "\n"
+echo "################################################################"
 echo "FINISH"
 echo "################################################################"
 echo "\n"
